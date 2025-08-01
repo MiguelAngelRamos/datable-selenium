@@ -18,7 +18,7 @@ public class PageSteps {
   }
 
   @Given("que el usuario accede al formulario de pago")
-  public void que_el_suario_accede_al_formulario_de_pago() {
+  public void que_el_usuario_accede_al_formulario_de_pago() {
      // Navegar a la página del formulario de pago
     formularioPagoPage.navigateTo();
   }
