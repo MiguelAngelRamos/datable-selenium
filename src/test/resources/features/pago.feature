@@ -1,5 +1,5 @@
 Feature: Validación de Formulario de Pago
-
+  @pago
   Scenario Outline: Validar pago con diferentes montos y métodos
     Given que el usuario accede al formulario de pago
     When ingresa el monto <monto> y selecciona el medio <medio>
