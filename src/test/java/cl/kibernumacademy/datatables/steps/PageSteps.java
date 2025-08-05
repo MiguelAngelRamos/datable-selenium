@@ -48,6 +48,8 @@ public class PageSteps {
     formularioPagoPage.ingresarMonto(monto);
     // Seleccionar el medio de pago
     formularioPagoPage.seleccionarMedioPago(medio);
+    // Pagar 
+    formularioPagoPage.pagar();
   }
 
   @Then("el sistema debería mostrar el mensaje {string}")
