@@ -8,6 +8,7 @@ import cl.kibernumacademy.datatables.pages.FormularioPagoPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -47,6 +48,12 @@ public class PageSteps {
     // Seleccionar el medio de pago
     formularioPagoPage.seleccionarMedioPago(medio);
   }
+
+  @Then("el sistema debería mostrar el mensaje {string}")
+  public void el_sistema_deberia_mostrar_el_mensaje(String mensajeEsperado) {
+    // String mensajeReal =
+  }
+
 
 
 }
