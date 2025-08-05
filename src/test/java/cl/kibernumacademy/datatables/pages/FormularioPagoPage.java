@@ -19,7 +19,8 @@ public class FormularioPagoPage {
   private By medioSelect = By.id("medio");
   // id: resultado
   private By resultadoText = By.id("resultado");
-  // private by divResultText =  By.ByXPath("//*[@id="resultado"]/div");
+  // private by divResultText = By.xpath("//*[@id="resultado"]/div");
+  private By buttonPagar = By.xpath("//button[@type='submit' and contains(text(), 'Pagar')]");
 
   public FormularioPagoPage(WebDriver driver) {
     this.driver = driver;
@@ -49,6 +50,11 @@ public class FormularioPagoPage {
     // return resultado.getText();
     WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(resultadoText));
     return resultado.getText().replaceAll("<.*?>", "").trim();
+  }
+
+  public void pagar() {
+    WebElement pagarBtn = wait.until(ExpectedConditions.elementToBeClickable(buttonPagar)); 
+    pagarBtn.click();
   }
 
 
