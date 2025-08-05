@@ -1,11 +1,15 @@
 package cl.kibernumacademy.datatables.steps;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cl.kibernumacademy.datatables.pages.FormularioPagoPage;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class PageSteps {
   private WebDriver driver;
@@ -14,7 +18,18 @@ public class PageSteps {
 
   @Before
   public void setUp() {
+    System.out.println("Iniciando escenario de prueba....");
+    WebDriverManager.chromedriver().clearDriverCache().setup();
+    ChromeOptions options = new ChromeOptions();
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    formularioPagoPage = new FormularioPagoPage(driver);
+  }
 
+  @After
+  public void tearDown() {
+    if(driver != null) driver.quit();
+    System.out.println("Finalizando escenario de prueba...");
   }
 
   @Given("que el usuario accede al formulario de pago")

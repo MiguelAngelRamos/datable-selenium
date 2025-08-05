@@ -12,7 +12,7 @@ public class FormularioPagoPage {
   private WebDriver driver;
   private WebDriverWait wait;
 
-  // Localizadores 
+  //*  Localizadores 
   // id: monto
   private By montoInput = By.id("monto");
   // id: medio
