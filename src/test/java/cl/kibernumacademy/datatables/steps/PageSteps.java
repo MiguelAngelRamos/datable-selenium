@@ -1,5 +1,6 @@
 package cl.kibernumacademy.datatables.steps;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -51,7 +52,8 @@ public class PageSteps {
 
   @Then("el sistema debería mostrar el mensaje {string}")
   public void el_sistema_deberia_mostrar_el_mensaje(String mensajeEsperado) {
-    // String mensajeReal =
+    String mensajeReal = formularioPagoPage.obtenerMensajeResultado();
+    Assertions.assertTrue(mensajeReal.contains(mensajeEsperado), "EL mensaje real no contiene el esperado, Esperado: '" + mensajeEsperado + "', Real: '" + mensajeReal + "'");
   }
 
 
